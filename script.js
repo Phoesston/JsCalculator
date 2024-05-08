@@ -62,7 +62,7 @@ function playRound(getHumanChoice,getComputerChoice){
 
 }
 
-function playGame(){
+/*function playGame(){
     let Rounds = 5;
     let currentRound =1;
     
@@ -76,7 +76,7 @@ function playGame(){
     }
 
   
-}
+}*/
 
 playGame();
 
