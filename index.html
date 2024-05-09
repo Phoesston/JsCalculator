@@ -13,20 +13,45 @@
         </h1>
     </header>
 
+    <div class="gameAreaHeader">
+        <div class="humanScore">
+            <h2>Your Score: </h2>
+            <h2 id="hScore"></h2>
+        </div>
+        <div class="rounds">
+            <h2>Rounds:</h2>
+            <h2 id="currRound">0</h2>
+        </div>
+        <div class="computerScore">
+            <h2>My Score: </h2>
+            <h2 id="cScore"></h2>
+        </div>
+        
+    </div>
+
     <div class="gameArea">
+
+       
+       
         <div class="player">
+            
             <ul>
-                <li><button>Rock</button></li>
-                <li><button>Paper</button></li>
-                <li><button>Scissors</button></li>
+                <button id ="rockBtn"><img src="./images/rock.png" alt="Rock"></button>
+                <button id ="paperBtn"><img src="./images/paper.png" alt="Paper"></button>
+                <button id = "scissorsBtn"><img src="./images/scissors.png" alt="Scissors"></button>
             </ul>
         </div>
 
-        <div class="computer">
-            <h2>My weapon</h2>
+        <div class="computerHeader"><h2>mychoice</h2></div>
+        <div id="computerChoice" class="computer">
+            
+        </div>
+
+        <div class="gameStatus">
+
         </div>
     </div>
     
-    
+    <script src="./script.js"></script>
 </body>
 </html>

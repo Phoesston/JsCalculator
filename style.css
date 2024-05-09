@@ -1,15 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     text-align: center;
-    margin: 50px;
+   
+    background-color: rgb(226, 245, 220);
+}
+
+header{
+    background-color: brown;
 }
 
 .gameArea{
+    margin: 50px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    
+    
+}
+
+.gameAreaHeader{
+    margin: 50px;
+    display: flex;
     justify-content: space-between;
+}
+
+.player{
+    padding-bottom: 50px;
+}
+
+.computer{
+    box-shadow: inset 0 0 0 3px red;
+    height: auto;
+    width: auto;
+
 }
 
 ul{
     display: flex;
     justify-content: space-around;
+    padding: 0%;
+}
+
+button{
+   margin-top: 30px;
+   padding-left: 0;
+   width: 200px;
+}
+
+img{
+    height: auto;
+    width: 100px;
+    
 }
