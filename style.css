@@ -51,8 +51,16 @@ button{
    width: 200px;
 }
 
+.computerHeader{
+    margin-bottom: 20px;
+}
+
 img{
     height: auto;
     width: 100px;
     
+}
+
+.gameStatus{
+    margin-top: 50px;
 }

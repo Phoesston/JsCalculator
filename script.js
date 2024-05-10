@@ -38,7 +38,21 @@ function getHumanChoice(choices){
 let humanScore = 0;
 let computerScore = 0;
 
+function updateImage(getComputerChoice){
+
+    let choice = getComputerChoice;
+    let imageName = choice.toLowerCase();
+    document.getElementById("computerChoice").innerHTML = `<img src='./images/${imageName}.png' alt='${imageName}'>`;
+}
+
+function gameStatus(getHumanChoice,getComputerChoice){
+    document.getElementById("cDivChoice").innerHTML = `<h2>I choose: ${getComputerChoice}</h2>`;
+    document.getElementById("hDivChoice").innerHTML = `<h2>You choose: ${getHumanChoice}</h2>`;
+}
+
+
 function playRound(getHumanChoice,getComputerChoice){
+
 
     if(getHumanChoice == "ROCK" && getComputerChoice == "SCISSORS"||
     getHumanChoice=="PAPER" && getComputerChoice=="ROCK"||
@@ -46,8 +60,12 @@ function playRound(getHumanChoice,getComputerChoice){
         console.log("You chose: " + getHumanChoice);
         console.log("Computer Chose: " + getComputerChoice);
         console.log("You Win!!\n\n");
-        document.getElementById("computerChoice").innerHTML = "<img src=\"./images/rock.png\" alt=\"Rock\">";
+
+        updateImage(getComputerChoice);
+        gameStatus(getHumanChoice,getComputerChoice);
         
+        
+
         humanScore++;
         document.getElementById("hScore").innerHTML = humanScore;
         document.getElementById("cScore").innerHTML = computerScore;
@@ -55,15 +73,23 @@ function playRound(getHumanChoice,getComputerChoice){
         console.log("You chose: " + getHumanChoice);
         console.log("Computer Chose: " + getComputerChoice);
         console.log("It's a tie\n\n");
-        document.getElementById("computerChoice").innerHTML = "<img src=\"./images/paper.png\" alt=\"Paper\">";
+
+        updateImage(getComputerChoice);
+        gameStatus(getHumanChoice,getComputerChoice);
+        
+
         document.getElementById("hScore").innerHTML = humanScore;
         document.getElementById("cScore").innerHTML = humanScore;
     }else{
         console.log("You chose: " + getHumanChoice);
         console.log("Computer Chose: " + getComputerChoice);
         console.log("You Lose\n\n");
-        document.getElementById("computerChoice").innerHTML = "<img src=\"./images/scissors.png\" alt=\"Scissors\">";
+
+        updateImage(getComputerChoice);
+        gameStatus(getHumanChoice,getComputerChoice);
+
         computerScore++;
+
 
         document.getElementById("hScore").innerHTML = humanScore;
         document.getElementById("cScore").innerHTML = computerScore;
@@ -71,19 +97,30 @@ function playRound(getHumanChoice,getComputerChoice){
 
 }
 
+
 let Rounds = 5;
-let currentRound =1;
+let currentRound =0;
 
 function playGame(humanChoice,computerChoice){
-    
-    document.getElementById("currRound").innerHTML = currentRound;
-    if(currentRound<=Rounds){
+
+    if(currentRound<Rounds){
         playRound(humanChoice,computerChoice);
         currentRound++;
+        document.getElementById("currRound").innerHTML = currentRound;
+    }else{
+        if(humanScore > computerScore){
+            document.getElementById("winner").innerHTML = "<h2>You Won!!</h2>"
+        }else if(humanScore == computerScore){
+            document.getElementById("winner").innerHTML = "<h2>We Tied.</h2>"
+        }else{
+            document.getElementById("winner").innerHTML = "<h2>You Lost!!</h2>"
+        }
 
     }
 
 }
+
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
